@@ -1,0 +1,38 @@
+{
+ "titulo": "Catálogo de formas",
+ "papel": "A4",
+ "entidades": [
+  {"id": "e1", "nombre": "ENTIDAD",       "x": 12,  "y": 8},
+  {"id": "e2", "nombre": "ENTIDAD_DEBIL", "x": 40,  "y": 8, "debil": true},
+  {"id": "e3", "nombre": "ASOCIATIVA",    "x": 70,  "y": 8, "asociativa": true},
+  {"id": "e4", "nombre": "ATRIBUTOS",     "x": 16,  "y": 34},
+  {"id": "a",  "nombre": "A",             "x": 55,  "y": 34},
+  {"id": "b",  "nombre": "B",             "x": 88,  "y": 34},
+  {"id": "p",  "nombre": "PADRE",         "x": 60,  "y": 50},
+  {"id": "h",  "nombre": "HIJO_DEBIL",    "x": 60,  "y": 70, "debil": true},
+  {"id": "sup","nombre": "SUPER",         "x": 108, "y": 46},
+  {"id": "s1", "nombre": "SUB_1",         "x": 98,  "y": 64},
+  {"id": "s2", "nombre": "SUB_2",         "x": 118, "y": 64},
+  {"id": "sup2","nombre": "SUPER_B",      "x": 108, "y": 96},
+  {"id": "s3", "nombre": "SUB_3",         "x": 98,  "y": 78},
+  {"id": "s4", "nombre": "SUB_4",         "x": 118, "y": 78}
+ ],
+ "atributos": [
+  {"nombre": "simple",        "de": "e4", "x": 3,  "y": 24},
+  {"nombre": "clave",         "de": "e4", "x": 16, "y": 22, "tipo": "clave"},
+  {"nombre": "clave_parcial", "de": "e4", "x": 32, "y": 24, "tipo": "clave_parcial"},
+  {"nombre": "derivado",      "de": "e4", "x": 6,  "y": 45, "tipo": "derivado"},
+  {"nombre": "multivalorado", "de": "e4", "x": 28, "y": 45, "tipo": "multivalorado"},
+  {"nombre": "de_relacion",   "de": "rel_normal", "x": 72, "y": 42}
+ ],
+ "relaciones": [
+  {"id": "rel_normal", "nombre": "NORMAL", "x": 71, "y": 34,
+   "participantes": [{"entidad": "a", "cardinalidad": "1"}, {"entidad": "b", "cardinalidad": "N", "total": true}]},
+  {"id": "rel_ident", "nombre": "IDENTIFICA", "x": 60, "y": 60, "identificadora": true,
+   "participantes": [{"entidad": "p", "cardinalidad": "1", "total": true}, {"entidad": "h", "cardinalidad": "N", "total": true}]}
+ ],
+ "especializaciones": [
+  {"id": "es_normal",  "padre": "sup",  "hijos": ["s1", "s2"], "x": 108, "y": 55},
+  {"id": "es_volteado","padre": "sup2", "hijos": ["s3", "s4"], "x": 108, "y": 87, "voltear": true}
+ ]
+}

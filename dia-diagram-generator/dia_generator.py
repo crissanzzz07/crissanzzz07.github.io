@@ -141,7 +141,7 @@ def _write_shape(layer, s):
         _element_common(o, s); _style(o)
         _string(o, "name", s.name)
         _bool(o, "weak", s.props.get("weak", False))
-        _bool(o, "associative", False)
+        _bool(o, "associative", s.props.get("associative", False))
     elif s.kind == "attr":
         o = _obj(layer, "ER - Attribute", s.id)
         _element_common(o, s); _style(o)
@@ -266,7 +266,7 @@ def build(spec):
     for e in spec.get("entidades", []):
         n = e["nombre"]
         add("entity", e["id"], n, e["x"], e["y"], round(CHAR_W * len(n) + ENTITY_PAD, 4), BOX_H,
-            weak=e.get("debil", False))
+            weak=e.get("debil", False), associative=e.get("asociativa", False))
 
     rel_defs = []
     for r in spec.get("relaciones", []):
