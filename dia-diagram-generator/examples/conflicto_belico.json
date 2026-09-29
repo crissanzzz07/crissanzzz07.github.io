@@ -1,0 +1,532 @@
+{
+ "titulo": "Conflictos bélicos (EER)",
+ "papel": "A3",
+ "entidades": [
+  {
+   "id": "conflicto",
+   "nombre": "CONFLICTO",
+   "x": 40,
+   "y": 55
+  },
+  {
+   "id": "pais",
+   "nombre": "PAÍS",
+   "x": 10,
+   "y": 55
+  },
+  {
+   "id": "territorial",
+   "nombre": "TERRITORIAL",
+   "x": 12,
+   "y": 33
+  },
+  {
+   "id": "religioso",
+   "nombre": "RELIGIOSO",
+   "x": 30,
+   "y": 33
+  },
+  {
+   "id": "economico",
+   "nombre": "ECONÓMICO",
+   "x": 50,
+   "y": 33
+  },
+  {
+   "id": "racial",
+   "nombre": "RACIAL",
+   "x": 68,
+   "y": 33
+  },
+  {
+   "id": "grupo",
+   "nombre": "GRUPO_ARMADO",
+   "x": 110,
+   "y": 55
+  },
+  {
+   "id": "division",
+   "nombre": "DIVISIÓN",
+   "x": 155,
+   "y": 55,
+   "debil": true
+  },
+  {
+   "id": "lider",
+   "nombre": "LÍDER_POLÍTICO",
+   "x": 110,
+   "y": 88,
+   "debil": true
+  },
+  {
+   "id": "jefe",
+   "nombre": "JEFE_MILITAR",
+   "x": 155,
+   "y": 88
+  },
+  {
+   "id": "org",
+   "nombre": "ORG_MEDIADORA",
+   "x": 40,
+   "y": 88
+  },
+  {
+   "id": "traficante",
+   "nombre": "TRAFICANTE",
+   "x": 92,
+   "y": 20
+  },
+  {
+   "id": "tipo_arma",
+   "nombre": "TIPO_ARMA",
+   "x": 128,
+   "y": 20
+  }
+ ],
+ "atributos": [
+  {
+   "nombre": "nombre_país",
+   "de": "pais",
+   "x": 10,
+   "y": 46,
+   "tipo": "clave"
+  },
+  {
+   "nombre": "código_conflicto",
+   "de": "conflicto",
+   "x": 24,
+   "y": 47,
+   "tipo": "clave"
+  },
+  {
+   "nombre": "nombre",
+   "de": "conflicto",
+   "x": 56,
+   "y": 47
+  },
+  {
+   "nombre": "num_muertos",
+   "de": "conflicto",
+   "x": 24,
+   "y": 63
+  },
+  {
+   "nombre": "num_heridos",
+   "de": "conflicto",
+   "x": 56,
+   "y": 63
+  },
+  {
+   "nombre": "regiones",
+   "de": "territorial",
+   "x": 12,
+   "y": 23,
+   "tipo": "multivalorado"
+  },
+  {
+   "nombre": "religiones",
+   "de": "religioso",
+   "x": 30,
+   "y": 23,
+   "tipo": "multivalorado"
+  },
+  {
+   "nombre": "materias_primas",
+   "de": "economico",
+   "x": 50,
+   "y": 23,
+   "tipo": "multivalorado"
+  },
+  {
+   "nombre": "etnias",
+   "de": "racial",
+   "x": 68,
+   "y": 23,
+   "tipo": "multivalorado"
+  },
+  {
+   "nombre": "fecha_ingreso",
+   "de": "interviene_ga",
+   "x": 67,
+   "y": 64
+  },
+  {
+   "nombre": "fecha_salida",
+   "de": "interviene_ga",
+   "x": 85,
+   "y": 64
+  },
+  {
+   "nombre": "código_grupo",
+   "de": "grupo",
+   "x": 94,
+   "y": 46,
+   "tipo": "clave"
+  },
+  {
+   "nombre": "num_bajas",
+   "de": "grupo",
+   "x": 94,
+   "y": 64,
+   "tipo": "derivado"
+  },
+  {
+   "nombre": "nombre",
+   "de": "grupo",
+   "x": 126,
+   "y": 64
+  },
+  {
+   "nombre": "num_división",
+   "de": "division",
+   "x": 142,
+   "y": 46,
+   "tipo": "clave_parcial"
+  },
+  {
+   "nombre": "num_barcos",
+   "de": "division",
+   "x": 155,
+   "y": 44
+  },
+  {
+   "nombre": "num_tanques",
+   "de": "division",
+   "x": 168,
+   "y": 46
+  },
+  {
+   "nombre": "num_aviones",
+   "de": "division",
+   "x": 170,
+   "y": 55
+  },
+  {
+   "nombre": "num_hombres",
+   "de": "division",
+   "x": 168,
+   "y": 64
+  },
+  {
+   "nombre": "num_bajas",
+   "de": "division",
+   "x": 142,
+   "y": 64
+  },
+  {
+   "nombre": "nombre",
+   "de": "lider",
+   "x": 98,
+   "y": 97,
+   "tipo": "clave_parcial"
+  },
+  {
+   "nombre": "apoyos",
+   "de": "lider",
+   "x": 122,
+   "y": 97
+  },
+  {
+   "nombre": "código_jefe",
+   "de": "jefe",
+   "x": 143,
+   "y": 97,
+   "tipo": "clave"
+  },
+  {
+   "nombre": "rango",
+   "de": "jefe",
+   "x": 167,
+   "y": 97
+  },
+  {
+   "nombre": "código_org",
+   "de": "org",
+   "x": 22,
+   "y": 79,
+   "tipo": "clave"
+  },
+  {
+   "nombre": "nombre",
+   "de": "org",
+   "x": 14,
+   "y": 87
+  },
+  {
+   "nombre": "tipo",
+   "de": "org",
+   "x": 22,
+   "y": 95
+  },
+  {
+   "nombre": "fecha_ingreso",
+   "de": "interviene_om",
+   "x": 18,
+   "y": 68
+  },
+  {
+   "nombre": "num_personas",
+   "de": "interviene_om",
+   "x": 18,
+   "y": 75
+  },
+  {
+   "nombre": "fecha_salida",
+   "de": "interviene_om",
+   "x": 62,
+   "y": 68
+  },
+  {
+   "nombre": "tipo_ayuda",
+   "de": "interviene_om",
+   "x": 62,
+   "y": 75
+  },
+  {
+   "nombre": "nombre",
+   "de": "traficante",
+   "x": 92,
+   "y": 11,
+   "tipo": "clave"
+  },
+  {
+   "nombre": "nombre",
+   "de": "tipo_arma",
+   "x": 121,
+   "y": 11,
+   "tipo": "clave"
+  },
+  {
+   "nombre": "poder_destructivo",
+   "de": "tipo_arma",
+   "x": 139,
+   "y": 11
+  },
+  {
+   "nombre": "cantidad_máx",
+   "de": "puede_suministrar",
+   "x": 110,
+   "y": 11
+  },
+  {
+   "nombre": "total_armas",
+   "de": "suministra",
+   "x": 110,
+   "y": 31
+  }
+ ],
+ "relaciones": [
+  {
+   "id": "afecta",
+   "nombre": "AFECTA",
+   "x": 25,
+   "y": 55,
+   "participantes": [
+    {
+     "entidad": "pais",
+     "cardinalidad": "M"
+    },
+    {
+     "entidad": "conflicto",
+     "cardinalidad": "N",
+     "total": true
+    }
+   ]
+  },
+  {
+   "id": "interviene_ga",
+   "nombre": "INTERVIENE_GA",
+   "x": 76,
+   "y": 55,
+   "participantes": [
+    {
+     "entidad": "conflicto",
+     "cardinalidad": "M",
+     "total": true
+    },
+    {
+     "entidad": "grupo",
+     "cardinalidad": "N"
+    }
+   ]
+  },
+  {
+   "id": "interviene_om",
+   "nombre": "INTERVIENE_OM",
+   "x": 40,
+   "y": 71.5,
+   "participantes": [
+    {
+     "entidad": "conflicto",
+     "cardinalidad": "M"
+    },
+    {
+     "entidad": "org",
+     "cardinalidad": "N"
+    }
+   ]
+  },
+  {
+   "id": "depende_de",
+   "nombre": "DEPENDE_DE",
+   "x": 40,
+   "y": 99,
+   "participantes": [
+    {
+     "entidad": "org",
+     "cardinalidad": "1",
+     "lado_entidad": "BL"
+    },
+    {
+     "entidad": "org",
+     "cardinalidad": "N",
+     "lado_entidad": "BR"
+    }
+   ]
+  },
+  {
+   "id": "dispone",
+   "nombre": "DISPONE",
+   "x": 132,
+   "y": 55,
+   "identificadora": true,
+   "participantes": [
+    {
+     "entidad": "grupo",
+     "cardinalidad": "1",
+     "total": true
+    },
+    {
+     "entidad": "division",
+     "cardinalidad": "N",
+     "total": true
+    }
+   ]
+  },
+  {
+   "id": "lidera",
+   "nombre": "LIDERA",
+   "x": 110,
+   "y": 71.5,
+   "identificadora": true,
+   "participantes": [
+    {
+     "entidad": "grupo",
+     "cardinalidad": "1",
+     "total": true
+    },
+    {
+     "entidad": "lider",
+     "cardinalidad": "N",
+     "total": true
+    }
+   ]
+  },
+  {
+   "id": "dirige",
+   "nombre": "DIRIGE",
+   "x": 155,
+   "y": 71.5,
+   "participantes": [
+    {
+     "entidad": "division",
+     "cardinalidad": "1"
+    },
+    {
+     "entidad": "jefe",
+     "cardinalidad": "≤3"
+    }
+   ]
+  },
+  {
+   "id": "obedece",
+   "nombre": "OBEDECE",
+   "x": 132,
+   "y": 88,
+   "participantes": [
+    {
+     "entidad": "lider",
+     "cardinalidad": "1"
+    },
+    {
+     "entidad": "jefe",
+     "cardinalidad": "N",
+     "total": true
+    }
+   ]
+  },
+  {
+   "id": "dialoga",
+   "nombre": "DIALOGA",
+   "x": 75,
+   "y": 88,
+   "participantes": [
+    {
+     "entidad": "org",
+     "cardinalidad": "M"
+    },
+    {
+     "entidad": "lider",
+     "cardinalidad": "N"
+    }
+   ]
+  },
+  {
+   "id": "puede_suministrar",
+   "nombre": "PUEDE_SUMINISTRAR",
+   "x": 110,
+   "y": 20,
+   "participantes": [
+    {
+     "entidad": "traficante",
+     "cardinalidad": "M"
+    },
+    {
+     "entidad": "tipo_arma",
+     "cardinalidad": "N"
+    }
+   ]
+  },
+  {
+   "id": "suministra",
+   "nombre": "SUMINISTRA",
+   "x": 110,
+   "y": 40,
+   "participantes": [
+    {
+     "entidad": "traficante",
+     "cardinalidad": "M",
+     "lado_relacion": "W",
+     "lado_entidad": "S"
+    },
+    {
+     "entidad": "tipo_arma",
+     "cardinalidad": "N",
+     "lado_relacion": "E",
+     "lado_entidad": "S"
+    },
+    {
+     "entidad": "grupo",
+     "cardinalidad": "P",
+     "lado_relacion": "S",
+     "lado_entidad": "N"
+    }
+   ]
+  }
+ ],
+ "especializaciones": [
+  {
+   "id": "es_conflicto",
+   "padre": "conflicto",
+   "hijos": [
+    "territorial",
+    "religioso",
+    "economico",
+    "racial"
+   ],
+   "x": 40,
+   "y": 45,
+   "voltear": true
+  }
+ ]
+}
